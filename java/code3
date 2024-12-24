@@ -1,1 +1,34 @@
+import java.util.Scanner;
+
+public class LargestInArray {
+    static int findLargest(int[] arr, int size) {
+        int largest = 0;
+        for (int i = 1; i <= size; i++) { 
+            if (arr[i] > largest) {
+                largest = arr[i];
+            }
+        }
+        return largest;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the size of the array: ");
+        int n = sc.nextInt();
+
+        if (n <= 0) {
+            System.out.println("Error: Array size must be positive."); 
+        }
+
+        int[] arr = new int[n];
+        System.out.println("Enter " + n + " elements:");
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        int largest = findLargest(arr, n);
+        System.out.println("The largest number is "); 
+        sc.close(); 
+    }
+}
 
