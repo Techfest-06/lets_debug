@@ -1,1 +1,33 @@
+#include <iostream>
+using namespace std;
+
+int findLargest(int arr[], int size) {
+    int largest = 0; 
+    for (int i = 1; i <= size; i++) { 
+        if (arr[i] > largest) {
+            largest = arr[i];
+        }
+    }
+    return largest;
+}
+
+int main() {
+    int n;
+    cout << "Enter the size of the array: ";
+    cin >> n;
+
+    if (n <= 0) {
+        cout << "Error: Array size must be positive.\n"; 
+    }
+
+    int arr[n];
+    cout << "Enter " << n << " elements:" << endl;
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
+
+    int largest = findLargest(arr, n);
+    cout << "The largest number is " << endl; 
+    return; 
+}
 
